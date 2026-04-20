@@ -1,0 +1,19 @@
+[project]
+name = "tokyo-mcp-server"
+version = "0.1.0"
+description = "Tokyo Transit MCP Tools for Client UI"
+requires-python = ">=3.10"
+
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "lxml",
+    "pytest"
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tokyo_mcp*"]
