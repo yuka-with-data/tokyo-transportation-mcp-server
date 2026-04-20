@@ -1,4 +1,4 @@
-from services.route_service import get_route
+from tokyo_mcp.services.route_service import get_route
 
 # ------------------------------------------------------
 # Mock dependencies
@@ -24,7 +24,7 @@ def test_get_route_success(monkeypatch):
     Test full route service flow (success case)
     """
 
-    from services import route_service
+    from tokyo_mcp.services import route_service
 
     # --------------------------------------------------
     # Patch dependencies
