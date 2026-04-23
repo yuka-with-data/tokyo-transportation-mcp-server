@@ -4,6 +4,10 @@ Query Parser Utility
 Convers natural language user queries into structured 
 departure/arrival station inputs for MCP tools.
 
+Purpose: 
+This query parser exists to translate messy human language into clean, 
+structured inputs so MCP tools stay deterministic and resuable.
+
 Uses:
 - spaCy for entity extraction (primary)
 - regex patterns as fallback (robustness)
