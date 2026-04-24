@@ -12,6 +12,28 @@ Returns:
 import re
 from bs4 import BeautifulSoup
 
+# ------------------------------------------------
+# Internal Helper: station validation
+# -------------------------------------------------
+def _is_valid_station(text:str) -> bool:
+    """ Filter out non-station noise from Yahoo transit HTML """
+    if not text:
+        return False
+    
+    # Obvious noise keywords
+    noise_keywords = [
+        "ドーナツ", "カフェ", "レストラン", "ショップ", "store", "shop"
+    ]
+
+    if any(kw in text for kw in noise_keywords):
+        return False
+
+    # must contain Japanese / Kanji characters (basic heuristic)
+    return bool(re.search(r"[ぁ-んァ-ン一-龯]", text))
+
+# ----------------------------------------------
+# Main Parser
+# ----------------------------------------------
 
 def parse_transit_html(html: str) -> dict | None:
     """
@@ -56,7 +78,11 @@ def parse_transit_html(html: str) -> dict | None:
     for station in route_detail.find_all("div", class_="station"):
         dt = station.find("dt")
         if dt:
-            stations.append(dt.get_text(strip=True))
+            name = dt.get_text(strip=True)
+
+            # 🔥 filter noise here
+            if _is_valid_station(name):
+                stations.append(name)
 
     transfer_stations = stations[1:-1] if len(stations) > 2 else []
 
@@ -67,7 +93,11 @@ def parse_transit_html(html: str) -> dict | None:
     for segment in route_detail.find_all("div", class_="fareSection"):
         line_info = segment.select_one("ul li div")
         if line_info:
-            train_lines.append(line_info.get_text(strip=True))
+            text = line_info.get_text(strip=True)
+
+            # optional cleanup (avoid empty noise)
+            if text and len(text) > 2:
+                train_lines.append(text)
 
     # ---------------------------------------------------------
     # Structured output (MCP-friendly)
