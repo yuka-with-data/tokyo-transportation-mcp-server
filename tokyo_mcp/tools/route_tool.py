@@ -19,13 +19,12 @@ def _split_travel_time(travel_time:str) -> Dict[str,str]:
       """
     try:
         dep, arr = travel_time.split("→")
-        departure_time = dep.replace("発", "").strip()
-        arrival_time = arr.replace("着", "").strip()
 
         return {
-            "departure_time": departure_time,
-            "arrival_time": arrival_time,
+            "departure_time": dep.replace("発", "").strip(),
+            "arrival_time": arr.replace("着", "").strip(),
         }
+
     except Exception:
         return {
             "departure_time": None,
