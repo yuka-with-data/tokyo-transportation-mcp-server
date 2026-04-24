@@ -122,18 +122,20 @@ def get_departure_for_arrival(
             "reason": "invalid_target_arrival_format"
         }
     
+    buffer_minutes = buffer_minutes or 10
+
     # Step 6: Compute recommended departure
     # Subtract travel + buffer from target arrival
     recommended_dt = target_dt - timedelta(minutes=travel_minutes + buffer_minutes)
     # Format as HH:MM string
-    recommended_departure = recommended_dt.strftime("%H:%M")
+    recommended_departure_time = recommended_dt.strftime("%H:%M")
 
-    # Step 6: Return structured result
+    # Step 7: Return structured result
     return {
         "origin": route.get("departure"),
         "destination": route.get("arrival"),
         "target_arrival_time": target_arrival_time,
-        "recommended_departure_time": recommended_departure,
+        "recommended_departure_time": recommended_departure_time,
         "estimated_travel_time_minutes": travel_minutes,
         "buffer_minutes": buffer_minutes,
         "route": route
