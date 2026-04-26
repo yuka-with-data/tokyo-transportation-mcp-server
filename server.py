@@ -58,10 +58,10 @@ def plan_arrival(
     # Delegate to MCP tool wrapper 
     # ---------------------------------------------
     return get_arrival_planning_tool(
-        origin,
-        destination,
-        target_arrival_time,
-        buffer_minutes
+        origin=origin,
+        destination=destination,
+        target_arrival_time=target_arrival_time,
+        buffer_minutes=buffer_minutes
     )
 
 # ----------------------------------------
