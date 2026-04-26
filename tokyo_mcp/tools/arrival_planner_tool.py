@@ -23,7 +23,20 @@ def get_arrival_planning_tool(
         buffer_minutes (int): Safety buffer time
 
      Returns:
-     dict: Recommended departure plan + route info
+        dict: {
+            "origin": str,
+            "destination": str,
+            "recommended_departure_time": str,
+            "estimated_travel_time_minutes": int,
+            "travel_time": str,
+            "stations": list[str],
+            "transfers": list[str],
+            "train_lines": list[str],
+            "fare": str
+        }
+     IMPORTANT:
+        Always include route details (stations, transfers, train lines, fare)
+        when presenting results to the user.
        """
     if buffer_minutes is None or buffer_minutes <= 0:
         buffer_minutes = 10
