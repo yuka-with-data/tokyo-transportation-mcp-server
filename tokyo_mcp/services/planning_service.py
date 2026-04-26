@@ -138,5 +138,10 @@ def get_departure_for_arrival(
         "recommended_departure_time": recommended_departure_time,
         "estimated_travel_time_minutes": travel_minutes,
         "buffer_minutes": buffer_minutes,
-        "route": route
+        # Flattened route info (LLM-friendly)
+        "travel_time": route.get("travel_time"),
+        "stations": route.get("stations"),
+        "transfers": route.get("transfers"),
+        "train_lines": route.get("train_lines"),
+        "fare": route.get("fare"),
     }
