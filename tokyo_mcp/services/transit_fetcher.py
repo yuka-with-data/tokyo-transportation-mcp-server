@@ -1,5 +1,9 @@
 """ 
-# Transit Fetcher
+# Transit Fetcher [Experimental]
+- Used during early prototyping
+- Not intended for production use
+- May violate third-party terms depending on usage
+- Will be replaced by structured data sources (ODPT / GTFS)
 
 Responsible for retrieving raw HTML data from the Yahoo Japan Transit search endpoint.
 This module handles only network requests (I/O).
