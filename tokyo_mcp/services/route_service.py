@@ -10,6 +10,7 @@ This layer contains No scrapig, No parsing logic, and No MCP/tool interface code
  """
 from tokyo_mcp.services.experimental.temp_fetcher import fetch_transit_html
 from tokyo_mcp.services.experimental.temp_parser import parse_transit_html
+from tokyo_mcp.services.data_service_selector import get_transit_service
 from tokyo_mcp.data.stations import get_japanese_station_name
 
 def get_route(departure: str, arrival: str) -> dict:
@@ -37,29 +38,21 @@ def get_route(departure: str, arrival: str) -> dict:
         }
     
     # -----------------------------
-    # Fetch HTML
+    # Select backend data service [Experimental]
     # -----------------------------
-    html = fetch_transit_html(departure_jp, arrival_jp)
+    service = get_transit_service()
 
-    if not html:
-        return{
-            "error": "fetch_failed",
-            "departure": departure_jp,
-            "arrival": arrival_jp,
-        }
-    
-    # ------------------------------
-    # Parse route data
-    # ------------------------------
-    route_data = parse_transit_html(html)
+    # Delegate route fetching to select backend
+    route_data = service.get_route(departure_jp, arrival_jp)
 
+    # Handle failure from backend service
     if not route_data:
         return {
-            "error": "parse_failed",
+            "error": "route_not_found",
             "departure": departure_jp,
             "arrival": arrival_jp,
         }
-    
+
     # ---------------------------------
     # Attach normalized metadata
     # ---------------------------------
