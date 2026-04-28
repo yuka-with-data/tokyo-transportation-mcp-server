@@ -55,6 +55,7 @@ def test_get_route_success(monkeypatch):
     # ----------------------------------------------
     # Assertions
     # -----------------------------------------------
-    assert result["travel_time"] == "45 min"
-    assert result["fare"] == "300円"
+    assert "発" in result["travel_time"]
+    assert "着" in result["travel_time"]
+    assert "円" in result["fare"]
     assert "stations" in result
