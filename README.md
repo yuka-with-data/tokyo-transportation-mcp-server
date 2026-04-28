@@ -22,6 +22,47 @@ By structuring transportation logic as callable tools, this MCP server enables A
 
 At the same time, this project aims to make Tokyo transit more accessible for travelers and non-native residents—allowing them to interact with complex transportation systems using natural language, without needing to navigate multiple unfamiliar local services.
 
+## ⚠️ Project Status & Data Source Note
+
+This repository is a **demonstration of MCP (Model Context Protocol) architecture applied to a real-world transportation use case**.
+
+The current system successfully retrieves and processes real-time transit data, and serves as a working prototype of how MCP tools can be structured and integrated into an agent-based workflow.
+
+However, the current implementation relies on a third-party web-based data source, which was intentionally used during the early development phase to:
+
+* validate MCP tool design
+* test end-to-end agent interaction
+* iterate quickly on system architecture
+
+### 🔄 Ongoing Transition
+
+To ensure long-term reliability, scalability, and proper data usage, the project is currently being refactored to migrate toward **official, open-source and structured data sources**, such as:
+
+* Open Data Platform for Public Transportation (ODPT)
+* GTFS / GTFS-Realtime feeds
+* other publicly available or licensed transit APIs
+
+This transition focuses on improving:
+
+* data stability
+* system reliability
+* architectural integrity
+
+### 🎯 Project Intent
+
+This repository is **not intended as a production-ready transit service**. It is a working prototype designed to explore and validate MCP-based system architecture for transportation use cases.
+
+The project serves as a technical showcase of:
+
+- tool abstraction patterns
+- service layer design
+- multi-source data integration strategies
+
+The system is currently in an **intermediate stage between rapid prototyping and a more robust, production-oriented architecture**, with ongoing migration toward stable and structured transit data sources.
+
+Contributions are welcome as the project evolves. See **CONTRIBUTING.md** for guidance on how to get involved.
+
+
 ## What is MCP?
 **MCP (Model Context Protocol)** is a design pattern for structuring how AI models interact with external tools and systems.
 
@@ -215,10 +256,20 @@ Planned and potential improvements:
     - Visualization (maps, route diagrams)
 
 ## Contributing
-Please open an issue first, then create a pull request linked to that issue. For the full contribution workflow, please refer to the documentation in [this repository](https://github.com/yuka-with-data/one-commit-a-day/blob/master/resources/contribution-workflow.md). 
+Please open an issue first, then create a pull request linked to that issue. For the full contribution workflow, please refer to the documentation in this repository.
+
+### Current Focus Areas
+
+* ODPT API integration
+* GTFS data processing
+* Routing engine improvements
+* Service layer refactoring
 
 ### Guidelines
-- Keep tools thin and delegate logic to services
-- Maintain clear separation of concerns
-- Prefer structured outputs over free-form text
-- Add tests for new functionality when possible
+
+* Keep `server.py` stable unless necessary
+* Focus changes in `services/` and `tools/`
+* Prefer modular and replaceable components
+* Avoid introducing new scraping-based dependencies
+
+Feel free to open issues for discussion before large changes.
