@@ -8,21 +8,25 @@ Coordinate the transit pipeline:
 
 This layer contains No scrapig, No parsing logic, and No MCP/tool interface code. 
  """
-from tokyo_mcp.services.experimental.temp_fetcher import fetch_transit_html
-from tokyo_mcp.services.experimental.temp_parser import parse_transit_html
 from tokyo_mcp.services.data_service_selector import get_transit_service
 from tokyo_mcp.data.stations import get_japanese_station_name
 
 def get_route(departure: str, arrival: str) -> dict:
     """
-    Main MCP-ready route service.
+    This function acts as the main interface between MCP tools and the transit backend system.
 
     Args:
         departure (str): Starting station (English or raw input)
         arrival (str): Destination station (English or raw input)
 
     Returns:
-        dict: Structured route information or error object
+        {
+            "departure": str,
+            "arrival": str,
+            "travel_time": str,
+            "fare": str,
+            ... (backend-dependent fields)
+        }
     """
     # ------------------------------
     # Normalize station names
