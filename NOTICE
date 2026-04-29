@@ -1,0 +1,17 @@
+Tokyo Transportation MCP Server
+
+Copyright 2026 yuka-with-data
+
+This project is a demonstration of MCP (Model Context Protocol) architecture
+applied to a transportation use case.
+
+Portions of this project were developed using publicly available information
+and experimental data retrieval techniques during early prototyping.
+
+The project is currently being migrated toward structured and officially
+provided transit data sources, including (but not limited to):
+
+- Open Data Platform for Public Transportation (ODPT)
+- GTFS / GTFS-Realtime
+
+This repository is intended for research, experimentation, and educational purposes.
