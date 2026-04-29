@@ -71,6 +71,8 @@ Instead of relying purely on natural language responses, MCP enables models to:
 - Receive structured outputs
 - Chain multiple tool calls as part of reasoning
 
+MCP is based on a **client–server architecture**, where the model acts as the client that issues tool requests, and the server provides tools, data access, and execution logic in a structured and controlled way.
+
 In this project, MCP is implemented by:
 - Defining tools (`tools/`) as the interface exposed to the model
 - Delegating logic to services (`services/`)
@@ -235,7 +237,15 @@ Developers can easily extend the test setup by:
 - Mocking external calls (e.g., transit fetching)
 
 ## Roadmap
+The primary focus of this project is currently the migration from experimental scraping-based data sources to stable, structured transit data systems (ODPT / GTFS / related APIs). This migration is foundational to all future improvements.
+
 Planned and potential improvements:
+- Data Source Migration (Priority):
+    - Replace experimental web scraping with structured transit APIs (ODPT, GTFS)
+    - Build a unified transit data abstraction layer
+    - Standardize route, station, and timetable data models
+    - Improve reliability and consistency of real-time vs static data handling
+    - Gradually deprecate experimental adapters
 - Adding tools:
     - Fare optimization
     - Multi-route comparison
@@ -245,9 +255,6 @@ Planned and potential improvements:
     - Multi-step itinerary support
 - Multi-agent integration:
     - Coordination between transportation + local recommendation agents
-- Data improvements
-    - Expand station coverage
-    - Improve parsing robustness
 - Developer experience:
     - Better logging and debugging
     - Type hints and validation improvements
@@ -256,14 +263,7 @@ Planned and potential improvements:
     - Visualization (maps, route diagrams)
 
 ## Contributing
-Please open an issue first, then create a pull request linked to that issue. For the full contribution workflow, please refer to the documentation in this repository.
-
-### Current Focus Areas
-
-* ODPT API integration
-* GTFS data processing
-* Routing engine improvements
-* Service layer refactoring
+Please open an issue first, then create a pull request linked to that issue. For the full contribution workflow, please refer to the documentation in [this repository](https://github.com/yuka-with-data/one-commit-a-day/blob/master/resources/contribution-workflow.md).
 
 ### Guidelines
 
@@ -271,5 +271,3 @@ Please open an issue first, then create a pull request linked to that issue. For
 * Focus changes in `services/` and `tools/`
 * Prefer modular and replaceable components
 * Avoid introducing new scraping-based dependencies
-
-Feel free to open issues for discussion before large changes.
