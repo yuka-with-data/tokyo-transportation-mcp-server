@@ -1,60 +1,46 @@
 from tokyo_mcp.services.route_service import get_route
 
 # ------------------------------------------------------
-# Mock dependencies
+# Mock service layer
 # ------------------------------------------------------
-class MockFetcher:
-    @staticmethod
-    def fetch_transit_html(departure, arrival):
-        return "<html>mock html</html>"
-
-
-def mock_parser(html):
-    return {
-        "travel_time": "45 min",
-        "fare": "300円",
-        "stations": ["A", "B", "C"],
-        "transfers": ["B"],
-        "train_lines": ["JR Yamanote Line"]
-    }
+class MockTransitService:
+    def get_route(self, departure, arrival):
+        return {
+            "departure": departure,
+            "arrival": arrival,
+            "travel_time": "45分 発 10:00 着 10:45",
+            "fare": "300円",
+            "stations": ["A", "B", "C"],
+            "transfers": ["B"],
+            "train_lines": ["JR Yamanote Line"]
+        }
 
 
 def test_get_route_success(monkeypatch):
-    """
-    Test full route service flow (success case)
-    """
-
     from tokyo_mcp.services import route_service
-
     # --------------------------------------------------
     # Patch dependencies
     # --------------------------------------------------
     monkeypatch.setattr(
         route_service,
-        "fetch_transit_html",
-        lambda dep, arr: "<html>mock</html>"
-    )
-
-    monkeypatch.setattr(
-        route_service,
-        "parse_transit_html",
-        mock_parser
+        "get_transit_service",
+        lambda: MockTransitService()
     )
 
     monkeypatch.setattr(
         route_service,
         "get_japanese_station_name",
-        lambda x: x  # bypass normalization
+        lambda x: x
     )
 
-    # --------------------------------------------------------
+    # --------------------------------------------------
     # Run
-    # --------------------------------------------------------
+    # --------------------------------------------------
     result = route_service.get_route("Shinjuku", "Shibuya")
 
-    # ----------------------------------------------
+    # --------------------------------------------------
     # Assertions
-    # -----------------------------------------------
+    # --------------------------------------------------
     assert "発" in result["travel_time"]
     assert "着" in result["travel_time"]
     assert "円" in result["fare"]
