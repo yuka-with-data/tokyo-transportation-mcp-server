@@ -168,8 +168,9 @@ python server.py
 ```
 2. Connect to the Local MCP Client
 This configulation registers your local MCP server and instructs the MCP client to launch it using `python server.py` so the agent can access its tools. 
+
+Configulation Example:
 ```json
-# Config example
 {
   "mcpServers": {
     "tokyo-transport": {
