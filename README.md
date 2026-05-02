@@ -159,15 +159,29 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
-## Usage
-### Run MCP Server
-Start the server:
+## Quick Start (Codex Desktop / Local MCP Client)
+Get the MCP server running locally and connect it to a client like Codex Desktop in just a few steps. 
+1. Verify the MCP Server (Optional)
+You can manually start the server to ensure it runs without errors:
 ```bash
 python server.py
 ```
-This will initialize the MCP server and register the available tools for agent interaction.
+2. Connect to the Local MCP Client
+This configulation registers your local MCP server and instructs the MCP client to launch it using `python server.py` so the agent can access its tools. 
+```json
+# Config example
+{
+  "mcpServers": {
+    "tokyo-transport": {
+      "command": "python",
+      "args": ["server.py"]
+    }
+  }
+}
+```
+Save the config and restart the local MCP client so it detects the new MCP server.
 
+## Usage
 ### Example Queries
 These are examples of how an AI agent (or MCP client) might interact with the system:
 
