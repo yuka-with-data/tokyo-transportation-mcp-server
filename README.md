@@ -1,5 +1,9 @@
 # 🚆Tokyo MCP Server
-
+![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Status](https://img.shields.io/badge/status-demo--project-orange)
+![Architecture](https://img.shields.io/badge/design-MCP%20architecture-purple)
+![Use Case](https://img.shields.io/badge/use--case-AI%20Agents-green)
 ## Overview
 Tokyo MCP Server is a modular backend designed to provide structured public transportation intelligence for AI agents.
 
