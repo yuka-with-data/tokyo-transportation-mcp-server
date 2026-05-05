@@ -43,3 +43,13 @@ As a result:
 - Most of operators do not provide developer-accessible APIs or open data feeds, limiting programmatic access to their systems
 
 This fragmentation is a core reason why building a unified transit data system for Tokyo requires combining multiple partial sources rather than relying on a single provider.
+
+## Limitations of GTFS in Japan
+The General Transit Feed Specification is widely used internationally as a standard for transit data.
+
+However, in the context of Japan:
+- GTFS feeds are limited or incomplete for many operators
+- Coverage across the Tokyo area is inconsistent
+- Real-time data is rarely available
+
+Therefore, GTFS alone is insufficient as a primary data source for this project.
