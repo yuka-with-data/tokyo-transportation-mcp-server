@@ -38,6 +38,8 @@ However, the current implementation relies on a third-party web-based data sourc
 * test end-to-end agent interaction
 * iterate quickly on system architecture
 
+Refer to the `doc` folder for more details on data migration and its challenges.
+
 ### 🔄 Ongoing Transition
 
 To ensure long-term reliability, scalability, and proper data usage, the project is currently being refactored to migrate toward **official, open-source and structured data sources**, such as:
@@ -64,7 +66,7 @@ The project serves as a technical showcase of:
 
 The system is currently in an **intermediate stage between rapid prototyping and a more robust, production-oriented architecture**, with ongoing migration toward stable and structured transit data sources.
 
-Contributions are welcome as the project evolves. See **CONTRIBUTING.md** for guidance on how to get involved.
+Contributions are welcome as the project evolves. See Contributing section below for guidance on how to get involved.
 
 
 ## What is MCP?
@@ -96,37 +98,41 @@ This separation allows the model to focus on decision-making, while the system h
 ## Project Structure
 ```bash
 project_root
-│   .gitignore
-│   pyproject.toml
-│   README.md
-│   requirements.txt
-│   server.py
+│  ├── .gitignore
+│  ├── pyproject.toml
+│  ├── README.md
+│  ├──requirements.txt
+│  └── server.py
 │
 ├── tests
 │   └── test_route_service.py
 │
 └── tokyo_mcp
-    │   __init__.py
+    │  └── __init__.py
     │
     ├── data
-    │   │   stations.py
-    │   │   __init__.py
+    │   ├── stations.py
+    │   └── __init__.py
     │
     ├── services
-    │   │   planning_service.py
-    │   │   route_service.py
-    │   │   transit_fetcher.py
-    │   │   transit_parser.py
-    │   │   __init__.py
+    │   ├── data_service_selector.py
+    │   ├── planning_service.py
+    │   ├── route_service.py
+    │   ├── __init__.py
+    │   │
+    │   └── experimental
+    │       ├── temp_fetcher.py
+    │       ├── temp_parser.py
+    │       └── __init__.py
     │
     ├── tools
-    │   │   arrival_planner_tool.py
-    │   │   route_tool.py
-    │   │   __init__.py
+    │   ├── arrival_planner_tool.py
+    │   ├── route_tool.py
+    │   └── __init__.py
     │
     └── utils
-        │   query_parser.py
-        └──   __init__.py
+        ├── query_parser.py
+        └── __init__.py
 ```
 
 ## How It Works
