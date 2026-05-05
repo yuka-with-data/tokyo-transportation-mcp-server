@@ -53,3 +53,12 @@ However, in the context of Japan:
 - Real-time data is rarely available
 
 Therefore, GTFS alone is insufficient as a primary data source for this project.
+
+## Design Approach
+
+**TBD**
+
+## Key Takeaway
+While "open data" initiatives exist, practical accessibility can vary significantly depending on governance, data ownership, and approval processes.
+
+Rather than relying on a single source, this project aims to operate under real-world contraints by combining multiple partial data sources into a unified system.
