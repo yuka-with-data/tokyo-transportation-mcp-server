@@ -14,4 +14,6 @@ provided transit data sources, including (but not limited to):
 - Open Data Platform for Public Transportation (ODPT)
 - GTFS / GTFS-Realtime
 
-This repository is intended for research, experimentation, and educational purposes.
+This repository is provided under the Apache License 2.0.
+
+It is currently under active development and may change significantly as the architecture and data source evolve.
