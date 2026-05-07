@@ -56,15 +56,16 @@ This transition focuses on improving:
 
 ### 🎯 Project Intent
 
-This repository is **not intended as a production-ready transit service**. It is a working prototype designed to explore and validate MCP-based system architecture for transportation use cases.
+This project is a technical prototype exploring MCP-based system design for transportation use cases. It is not a production transit service. 
 
 The project serves as a technical showcase of:
 
 - tool abstraction patterns
 - service layer design
 - multi-source data integration strategies
+- agent-based system design
 
-The system is currently in an **intermediate stage between rapid prototyping and a more robust, production-oriented architecture**, with ongoing migration toward stable and structured transit data sources.
+The system is actively evolving from early-stage prototyping toward a more robust and structured architecture built on stable transit data sources.
 
 Contributions are welcome as the project evolves. See Contributing section below for guidance on how to get involved.
 
