@@ -12,9 +12,7 @@ compatibility: >
   access to the Tokyo Transit MCP tools and related route planning
   services.
 metadata:
-  author: yuka-with-data
   domain: transportation
-  region: tokyo
   version: 0.1.1
 allowed-tools: route_tool arrival_planner_tool
 ---
