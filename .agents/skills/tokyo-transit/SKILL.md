@@ -16,3 +16,22 @@ metadata:
   version: 0.1.1
 allowed-tools: route_tool arrival_planner_tool
 ---
+# Tokyo Transit MCP Server
+## Overview
+Tokyo Transit MCP Server provides rail transit routing and transportation assistance across the greater Tokyo metropolitan railway network.
+
+The skill is designed for:
+- station-to-station route planning
+- transfer guidance
+- travel time estimation
+- rail operator navigation
+- transit-oriented travel assistance
+
+Supported systems include:
+- JR Lines
+- Tokyo Metro
+- Toei Subway
+- private railways
+- connected regional rail system
+
+This skill focuses on transportation workflow and routing assistance, not geenral tourism planning or booking operations.
