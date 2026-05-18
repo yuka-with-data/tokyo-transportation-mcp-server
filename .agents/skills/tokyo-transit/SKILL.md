@@ -36,3 +36,17 @@ Supported systems include:
 - connected regional rail system
 
 This skill focuses on transportation workflow and routing assistance, not geenral tourism planning or booking operations.
+
+## Activation Criteria
+Activate this skill when the user:
+- asks how to travel between stations
+- references Tokyo train stations or rail operators
+- requests the fastest, simplest, or cheapest route
+- asks about train transfers
+- requests arrival or departure timing support
+
+Example triggers:
+- "How do I get from Shinjuku to Asakusa?"
+- "Best route from Tokyo Station to Yokohama?"
+- "Which line goes to Shibuya?"
+- "How many transfers to Maihama?"
