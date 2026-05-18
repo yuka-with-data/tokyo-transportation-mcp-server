@@ -50,3 +50,27 @@ Example triggers:
 - "Best route from Tokyo Station to Yokohama?"
 - "Which line goes to Shibuya?"
 - "How many transfers to Maihama?"
+
+## Tool Usage
+### `route_tool`
+Use for:
+- station-to-station routing
+- transfer discovery
+- line navigation
+- route comparison
+
+Expected inputs:
+- origin station
+- destination station
+- optional route constraints
+
+### `arrival_planner_tool`
+User for:
+- arrival estimation
+- departure timing support
+- schedule-aware planning
+- time-sensitive routing
+
+Expected inputs:
+- route information
+- target arrival or departure timing
