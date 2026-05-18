@@ -13,6 +13,7 @@ compatibility: >
   services.
 metadata:
   domain: transportation
+  region: Tokyo, Japan
   version: 0.1.1
 allowed-tools: route_tool arrival_planner_tool
 ---
