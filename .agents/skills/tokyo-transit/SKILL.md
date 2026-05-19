@@ -74,3 +74,10 @@ User for:
 Expected inputs:
 - route information
 - target arrival or departure timing
+
+## Routing Rules
+- Prefer lower-transfer routes when travel times are similar
+- Prefer faster express routes for long-distance travel
+- Clearly identify transfer stations and operators
+- Clarify ambiguous station names before routing
+- Use commonly recognized station names in responses
