@@ -105,3 +105,11 @@ If routing fails:
 
 If tool results conflict:
 - prioritize the most complete route result
+
+## Progressive Disclosure
+[WIP]
+
+Load additional references only when required.
+- A
+- B
+- C
