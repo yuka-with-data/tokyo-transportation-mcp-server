@@ -95,3 +95,13 @@ Preferred response structure:
 2. Transfer sequence
 3. Estimated travel time
 4. Additional notes (if needed)
+
+## Failure Handling
+If routing fails:
+- request clarification for ambiguous station names
+- confirm spelling when needed
+- explain unavailable route information clearly
+- provide best-effort guidance when partial data exists
+
+If tool results conflict:
+- prioritize the most complete route result
