@@ -113,3 +113,30 @@ Load additional references only when required.
 - A
 - B
 - C
+
+## Examples
+### Simple Route
+User:
+> How do I get from Shinjuku to Ueno?
+
+Behavior:
+- use `route_tool`
+- generate optimal route
+- present transfer guidance and estimated travel time
+
+### Transfer Route
+User:
+> Best route from Tokyo station to Maihama?
+
+Behavior:
+- compute transfer-aware route
+- identify transfer requirements
+- present travel duration and transfer sequence
+
+### Ambiguous Query
+User:
+> Route to Shinagawa
+
+Behavior:
+- clarify missing origin station
+- request additional routing context
