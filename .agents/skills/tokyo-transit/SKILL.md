@@ -81,3 +81,17 @@ Expected inputs:
 - Clearly identify transfer stations and operators
 - Clarify ambiguous station names before routing
 - Use commonly recognized station names in responses
+
+## Output Rules
+Responses should:
+- present stations in travel order
+- identify operators and line names
+- clearly indicate transfers
+- provide estimated travel duration when available
+- remain concise and readable
+
+Preferred response structure:
+1. Route summary
+2. Transfer sequence
+3. Estimated travel time
+4. Additional notes (if needed)
