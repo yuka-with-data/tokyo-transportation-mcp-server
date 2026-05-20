@@ -36,3 +36,21 @@ Routing considerations:
 - Some services continue directly into subway networs
 - Express service patterns vary by operator
 - Transfer requirements may differ by service type
+
+## Through-Service Behavior
+Some operators provide through-service routing across multiple systems.
+
+Examples:
+- Tokyo Metro ↔ Tokyu
+- Toei ↔ Keikyu
+- Metro ↔ Tobu
+
+When through-service exists:
+- prefer direct trains when practical
+- reduce unnecessary transfer instructions
+- clarify when passengers can remain onboard
+
+## Transfer Guidance Rules
+- Clearly distinguish platform transfers from operator changes
+- Prefer lower-complexity transfers when travel times are similar
+- Identify long walking transfers when known
