@@ -15,3 +15,19 @@ Verify the agent returns a valid transportation route.
 - [X] Pass
 - [ ] Partial
 - [ ] Fail
+
+### Test Case 02 - Transfer Route
+#### Objective
+Verify the agent can correctly handle and recommend an appropriate transfer route across multiple train lines in Tokyo.
+#### Expected Behavior
+- Returns a valid route from Tokyo Station to Odaiba
+- Includes realistic train line and transfer information
+- Suggests practical transportation options
+- Avoids hallucinated stations, routes, or travel times
+
+![Test Case 02](./images/2_transfer_heavy.png)
+
+#### Result
+- [X] Pass
+- [ ] Partial
+- [ ] Fail
