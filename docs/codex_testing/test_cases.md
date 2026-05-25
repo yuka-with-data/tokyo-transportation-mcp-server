@@ -64,3 +64,23 @@ Verify the agent can handle time-sensitive transportation requests that require 
 - [X] Pass
 - [ ] Partial
 - [ ] Fail
+
+### Test Case 05 - Alias Destination and Fare Calculation
+#### Objective
+Verify the agent can correctly interpret common destination aliases and accurately calculate fares across multi-step routes that includes walking segments.
+#### Expected Behavior
+- Correctly interprets "DisneySea" as Tokyo DisneySea
+- Returns a valid route from Shinjuku to Tokyo DisneySea
+- Correctly handles routes containing walking transfers between transportation legs
+- Accurately sums fare totals across all applicable train segments
+- Avoids incorrect fare aggregation or skipped transportation costs
+
+![Test Case 05](./images/5_Alias.png)
+
+#### Result
+- [ ] Pass
+- [ ] Partial
+- [X] Fail
+
+#### Observed Issue
+The route itself was generated correctly, but the total fare calculation was inaccurate. The agent failed to properly aggregate fares when a walking segment existed between transportation legs. As a result, one of the train segment fares was omitted from the final total.
