@@ -31,3 +31,19 @@ Verify the agent can correctly handle and recommend an appropriate transfer rout
 - [X] Pass
 - [ ] Partial
 - [ ] Fail
+
+### Test Case 03 - Ambiguous Destination Query
+#### Objective
+Verify the agent appropriately handles ambiguous transportation requests by asking a clarifying follow-up question before generating a route.
+#### Expected Behavior
+- Detects that the starting location is missing
+- Avoids assuming the user's departure station
+- Responds with a relevant clarification question
+- Maintains conversational flow instead of generating a hallucinated route
+
+![Test Case 03](./images/3_ambiguous.png)
+
+#### Result
+- [X] Pass
+- [ ] Partial
+- [ ] Fail
