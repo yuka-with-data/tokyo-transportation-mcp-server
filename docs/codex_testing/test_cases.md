@@ -47,3 +47,20 @@ Verify the agent appropriately handles ambiguous transportation requests by aski
 - [X] Pass
 - [ ] Partial
 - [ ] Fail
+
+### Test Case 04 - Time-Sensitive Arrival Query
+#### Objective 
+Verify the agent can handle time-sensitive transportation requests that require arrival-time awareness and practical route planning.
+#### Expected Behavior
+- Returns a valid route from Ikebukuro to Haneda Airport
+- Accounts for the requested arrival deadline of 8:30 AM
+- Suggests realistic departure timing and train connections
+- Prioritizes punctual and practical routing
+- Avoids impossible schedules or hallucinated travel times
+
+![Test Case 04](./images/4_time_sensitive.png)
+
+#### Result
+- [X] Pass
+- [ ] Partial
+- [ ] Fail
