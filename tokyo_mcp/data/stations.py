@@ -57,9 +57,6 @@ STATION_NAME_DICT = {
     # Key Private Railway Hubs (Keio, Tokyu, Odakyu, Seibu, Tobu)
     "Kichijoji": "吉祥寺",
     "Mitaka": "三鷹",
-    "Nakano": "中野",
-    "Koenji": "高円寺",
-    "Ogikubo": "荻窪",
     "Asagaya": "阿佐ヶ谷",
     "Nerima": "練馬",
     "Itabashi": "板橋",
@@ -72,11 +69,9 @@ STATION_NAME_DICT = {
 
     # Major Chuo Line & Sobu Line Stations
     "Ochanomizu": "御茶ノ水",
-    "Kanda": "神田",
     "Nakano": "中野",
     "Koenji": "高円寺",
     "Ogikubo": "荻窪",
-    "Mitaka": "三鷹",
     "Tachikawa": "立川",
 
     # Tokyo Bay & Rinkai Line Areas
@@ -100,6 +95,14 @@ STATION_NAME_DICT = {
     "Omiya": "大宮",
     "Matsudo": "松戸",
     "Kashiwa": "柏",
+
+    # Popular attraction areas (for tourist flow)
+    "DisneySea": "東京ディズニーシー",
+    "Tokyo DisneySea": "東京ディズニーシー",
+    "Disney Sea": "東京ディズニーシー",
+    "Disneyland": "東京ディズニーランド",
+    "Tokyo Disneyland": "東京ディズニーランド",
+    "Disney Land": "東京ディズニーランド",
 }
 
 def _generate_variants(name: str) -> list[str]:
