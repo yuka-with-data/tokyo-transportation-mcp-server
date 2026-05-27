@@ -60,14 +60,15 @@ def parse_transit_html(html: str) -> dict | None:
     travel_time = travel_time_tag.get_text(strip=True) if travel_time_tag else "N/A"
 
     # ---------------------------------------------------------
-    # Fare
+    # Fare (summary-first, fallback-safe)
     # ---------------------------------------------------------
     fare = "N/A"
-    fare_li = route_summary.select_one("ul li.fare")
+
+    fare_li = route_summary.select_one("li.fare")
 
     if fare_li:
-        full_text = fare_li.get_text(strip=True)
-        match = re.search(r"(\d[\d,]*)円", full_text)
+        text = fare_li.get_text(" ", strip=True)
+        match = re.search(r"(\d[\d,]*)円", text)
         if match:
             fare = match.group(0)
 
@@ -92,12 +93,21 @@ def parse_transit_html(html: str) -> dict | None:
     train_lines = []
     for segment in route_detail.find_all("div", class_="fareSection"):
         line_info = segment.select_one("ul li div")
-        if line_info:
-            text = line_info.get_text(strip=True)
+        if not line_info:
+            continue
 
-            # optional cleanup (avoid empty noise)
-            if text and len(text) > 2:
-                train_lines.append(text)
+        text = line_info.get_text(strip=True)
+
+        if not text or len(text) <= 2:
+            continue
+
+        # detect walking explicitly (no fare implications)
+        is_walk = ("徒歩" in text) or ("walk" in text.lower())
+
+        train_lines.append({
+            "type": "walk" if is_walk else "train",
+            "label": text
+        })
 
     # ---------------------------------------------------------
     # Structured output (MCP-friendly)
