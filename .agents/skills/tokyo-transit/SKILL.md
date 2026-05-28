@@ -102,6 +102,7 @@ Preferred response structure:
 1. Route summary
 2. Transfer sequence
 3. Estimated travel time
+4. Total fare
 4. Additional notes (if needed)
 
 ## Failure Handling
