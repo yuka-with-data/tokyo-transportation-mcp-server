@@ -82,6 +82,12 @@ Expected inputs:
 - Clarify ambiguous station names before routing
 - Use commonly recognized station names in responses
 
+## Fare Calculation Rules
+- Always use route summary fare as the primary source of truth when available
+- Do not compute total fare from individual segments
+- Walking segments are informational only and must not contribute to fare
+- Segment-level parsing is allowed only for explanation, not pricing
+
 ## Output Rules
 Responses should:
 - present stations in travel order
