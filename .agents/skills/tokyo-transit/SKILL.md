@@ -94,6 +94,7 @@ Responses should:
 - identify operators and line names
 - clearly indicate transfers
 - provide estimated travel duration when available
+- include total fare when available
 - remain concise and readable
 
 Preferred response structure:
