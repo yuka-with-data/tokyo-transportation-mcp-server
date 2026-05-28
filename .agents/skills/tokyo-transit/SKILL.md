@@ -35,7 +35,7 @@ Supported systems include:
 - private railways
 - connected regional rail system
 
-This skill focuses on transportation workflow and routing assistance, not geenral tourism planning or booking operations.
+This skill focuses on transportation workflow and routing assistance, not general tourism planning or booking operations.
 
 ## Activation Criteria
 Activate this skill when the user:
