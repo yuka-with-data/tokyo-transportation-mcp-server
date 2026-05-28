@@ -35,7 +35,7 @@ Supported systems include:
 - private railways
 - connected regional rail system
 
-This skill focuses on transportation workflow and routing assistance, not general tourism planning or booking operations.
+This skill focuses on transportation workflow and routing assistance, not general tourism planning or booking operations. When this skill is active, the MCP transit service MUST be initialized and used for all route generation. Web search must not be used as a substitute.
 
 ## Activation Criteria
 Activate this skill when the user:
