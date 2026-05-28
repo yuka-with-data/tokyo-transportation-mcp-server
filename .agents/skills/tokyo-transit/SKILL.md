@@ -80,6 +80,7 @@ Expected inputs:
 - Prefer faster express routes for long-distance travel
 - Clearly identify transfer stations and operators
 - Clarify ambiguous station names before routing
+- if origin or destination is missing, request clarification before generating a route
 - Use commonly recognized station names in responses
 
 ## Fare Calculation Rules
