@@ -99,17 +99,29 @@ This separation allows the model to focus on decision-making, while the system h
 ## Project Structure
 ```bash
 project_root
-│  ├── .gitignore
-│  ├── pyproject.toml
-│  ├── README.md
-│  ├──requirements.txt
-│  └── server.py
+│
+├── .gitignore
+├── pyproject.toml
+├── CHANGELOG.md
+├── README.md
+├── requirements.txt
+├── server.py
+│
+├── docs
+│   ├── debug
+│   │   └── ...
+│   │
+│   ├── eval
+│   │   └── ...
+│   │
+│   └── data_source_limitation.md
 │
 ├── tests
 │   └── test_route_service.py
 │
 └── tokyo_mcp
-    │  └── __init__.py
+    │
+    ├── __init__.py
     │
     ├── data
     │   ├── stations.py
