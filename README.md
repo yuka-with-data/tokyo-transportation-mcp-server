@@ -1,4 +1,4 @@
-# 🚆Tokyo MCP Server
+# 🚆Tokyo Transit MCP Server
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Status](https://img.shields.io/badge/status-demo--project-orange)
@@ -8,7 +8,7 @@
 > Release Update: Current master is reverted to `v0.1.1` due to regression in fare retrieval. `v0.1.2` is preserved in seperate branch for SKILL experimentation.
 
 ## Overview
-Tokyo MCP Server is a modular backend designed to provide structured public transportation intelligence for AI agents.
+Tokyo Transit MCP Server is a modular backend designed to provide structured public transportation intelligence for AI agents.
 
 Instead of returning raw or unstructured text, this system exposes transportation capabilities as tools that can be called by an agent. These tools handle route search and arrival-time planning, returning clean, predictable outputs that agents can reliably use in downstream reasoning.
 
