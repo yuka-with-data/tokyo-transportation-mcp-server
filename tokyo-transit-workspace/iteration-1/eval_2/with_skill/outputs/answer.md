@@ -1,27 +1,28 @@
-# Tokyo Station to Odaiba
-As of July 7, 2026 5:58 AM JST, the next route the transit tool found leaves Tokyo Station at 6:05 AM and arrives at Odaiba Kaihin Koen Station at 6:32 AM.
+# Shinjuku Station to Tokyo DisneySea
 
-## Route
-1. Tokyo Station to Shimbashi Station
+The best transit route returned by the Tokyo Transit MCP is:
 
-Line: JR Tokaido Main Line (train shown as the first leg in the route tool)
-
-2. Transfer at Shimbashi Station
-
-3. Shimbashi Station to Odaiba Kaihin Koen Station
-
-Line: Yurikamome
+1. **Shinjuku Station** to **Tokyo Station**
+   - Line: **JR Chuo Rapid Line**
+   - Departure: **06:27**
+   - Arrival: **06:41**
+2. **Transfer at Tokyo Station**
+3. **Tokyo Station** to **Maihama Station**
+   - Line: **JR Musashino Line**
+   - This is the rail access point for **Tokyo DisneySea**
+   - Arrival from the route query: **07:14**
 
 ## Fare
 
-Total fare: 480 yen
+- **Total fare: 440 yen**
 
-## Timing
+## Route Summary
 
-- Departure: 6:05 AM
-- Arrival: 6:32 AM
-- Total travel time: about 27 minutes
+- **Stations:** Shinjuku -> Tokyo -> Maihama
+- **Transfers:** 1 transfer at **Tokyo**
+- **Total travel time:** about **47 minutes**
 
 ## Notes
-This route includes 1 transfer at Shimbashi Station.
-If you mean the broader Odaiba area rather than Odaiba Kaihin Koen Station, this is the closest rail-access route returned by the transit tool.
+
+- The transit tool returned **Maihama Station** as the destination station for reaching Tokyo DisneySea.
+- If you want, I can also format this as a step-by-step departure plan or a compact directions card.
