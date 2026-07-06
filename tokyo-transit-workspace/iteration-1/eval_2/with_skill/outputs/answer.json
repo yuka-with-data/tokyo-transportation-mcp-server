@@ -1,26 +1,25 @@
 {
-  "origin": "Shinjuku Station",
-  "destination": "Tokyo DisneySea",
-  "rail_access_station": "Maihama Station",
+  "query_time_jst": "2026-07-07 05:58:41",
+  "origin": "Tokyo Station",
+  "destination": "Odaiba Kaihin Koen Station",
+  "departure_time": "06:05",
+  "arrival_time": "06:32",
+  "total_travel_time_minutes": 27,
+  "fare_yen": 480,
+  "transfers": [
+    "Shimbashi Station"
+  ],
   "route": [
     {
-      "from": "Shinjuku Station",
-      "to": "Tokyo Station",
-      "line": "JR Chuo Rapid Line",
-      "departure_time": "06:27",
-      "arrival_time": "06:41"
+      "from": "Tokyo Station",
+      "to": "Shimbashi Station",
+      "line": "JR Tokaido Main Line"
     },
     {
-      "from": "Tokyo Station",
-      "to": "Maihama Station",
-      "line": "JR Musashino Line",
-      "arrival_time": "07:14"
+      "from": "Shimbashi Station",
+      "to": "Odaiba Kaihin Koen Station",
+      "line": "Yurikamome"
     }
   ],
-  "transfers": [
-    "Tokyo Station"
-  ],
-  "fare_yen": 440,
-  "total_travel_time_minutes": 47,
-  "summary": "Take the JR Chuo Rapid Line from Shinjuku to Tokyo, transfer at Tokyo, then continue to Maihama for Tokyo DisneySea."
+  "summary": "Leave Tokyo Station at 6:05 AM, transfer once at Shimbashi, and arrive at Odaiba Kaihin Koen at 6:32 AM for 480 yen."
 }
