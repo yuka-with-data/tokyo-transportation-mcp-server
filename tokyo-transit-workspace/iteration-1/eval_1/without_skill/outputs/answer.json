@@ -1,0 +1,16 @@
+{
+  "origin": "Tokyo Station",
+  "destination": "Shinjuku Station",
+  "recommended_route": {
+    "mode": "JR train",
+    "line": "JR Chuo Rapid Line",
+    "direction": "Toward Shinjuku / Nakano / Takao",
+    "travel_time_minutes": 15,
+    "travel_time_max_minutes": 20
+  },
+  "alternative_route": {
+    "mode": "Tokyo Metro subway",
+    "line": "Marunouchi Line"
+  },
+  "summary": "Take the JR Chuo Rapid Line from Tokyo Station to Shinjuku Station."
+}
