@@ -1,0 +1,25 @@
+{
+  "query_time_jst": "2026-07-07 05:58:41",
+  "origin": "Tokyo Station",
+  "destination": "Odaiba Kaihin Koen Station",
+  "departure_time": "06:05",
+  "arrival_time": "06:32",
+  "total_travel_time_minutes": 27,
+  "fare_yen": 480,
+  "transfers": [
+    "Shimbashi Station"
+  ],
+  "route": [
+    {
+      "from": "Tokyo Station",
+      "to": "Shimbashi Station",
+      "line": "JR Tokaido Main Line"
+    },
+    {
+      "from": "Shimbashi Station",
+      "to": "Odaiba Kaihin Koen Station",
+      "line": "Yurikamome"
+    }
+  ],
+  "summary": "Leave Tokyo Station at 6:05 AM, transfer once at Shimbashi, and arrive at Odaiba Kaihin Koen at 6:32 AM for 480 yen."
+}
