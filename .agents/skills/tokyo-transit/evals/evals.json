@@ -1,0 +1,15 @@
+{
+  "skill_name": "tokyo-transit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "How do I get from Tokyo Station to Shinjuku Station?",
+      "expected_output": "Provides a valid route between Tokyo Station and Shinjuku Station, including travel time, transfers (if any), and fare."
+    },
+    {
+      "id": 2,
+      "prompt": "What's the best way to get from Shinjuku Station to Tokyo DisneySea?",
+      "expected_output": "Provides a valid route to Tokyo DisneySea via the nearest station, includes any required walking segment, travel time, transfers, and fare."
+    }
+  ]
+}
