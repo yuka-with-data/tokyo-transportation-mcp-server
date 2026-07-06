@@ -1,0 +1,26 @@
+{
+  "origin": "Shinjuku Station",
+  "destination": "Tokyo DisneySea",
+  "rail_access_station": "Maihama Station",
+  "route": [
+    {
+      "from": "Shinjuku Station",
+      "to": "Tokyo Station",
+      "line": "JR Chuo Rapid Line",
+      "departure_time": "06:27",
+      "arrival_time": "06:41"
+    },
+    {
+      "from": "Tokyo Station",
+      "to": "Maihama Station",
+      "line": "JR Musashino Line",
+      "arrival_time": "07:14"
+    }
+  ],
+  "transfers": [
+    "Tokyo Station"
+  ],
+  "fare_yen": 440,
+  "total_travel_time_minutes": 47,
+  "summary": "Take the JR Chuo Rapid Line from Shinjuku to Tokyo, transfer at Tokyo, then continue to Maihama for Tokyo DisneySea."
+}
