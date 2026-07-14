@@ -1,11 +1,11 @@
-""" 
+"""
 Query Parser Utility
 
-Convers natural language user queries into structured 
+Convers natural language user queries into structured
 departure/arrival station inputs for MCP tools.
 
-Purpose: 
-This query parser exists to translate messy human language into clean, 
+Purpose:
+This query parser exists to translate messy human language into clean,
 structured inputs so MCP tools stay deterministic and resuable.
 
 Uses:
@@ -77,7 +77,7 @@ def _clean_station(text: str) -> str:
 # Public API
 # ----------------------------------------------
 def parse_query(user_query: str) -> Dict[str, Optional[str]]:
-    """ 
+    """
      Parse user query into structured departure and arrival.
      Args:
         user_query(str): Natural language input
@@ -99,7 +99,7 @@ def parse_query(user_query: str) -> Dict[str, Optional[str]]:
     # Cleanup step
     departure = _clean_station(departure)
     arrival = _clean_station(arrival)
-    
+
     # Validate
     if not departure or not arrival:
         return {
@@ -120,7 +120,7 @@ def parse_query(user_query: str) -> Dict[str, Optional[str]]:
             "error": "invalid_station",
             "reason": "station_not_found"
         }
-    
+
     return {
         "departure": departure_jp,
         "arrival": arrival_jp

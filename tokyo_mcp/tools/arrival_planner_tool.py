@@ -1,4 +1,4 @@
-""" 
+"""
 MCP Tool: Arrival Planner Tool
 
 Wrapper around planning_service that converts a target arrival time
@@ -13,7 +13,7 @@ def get_arrival_planning_tool(
     target_arrival_time: str,
     buffer_minutes: int = 10
 ) -> Dict[str, Any]:
-    """ 
+    """
      MCP compatible tool for arrival-based route planning.
 
      Args:

@@ -1,4 +1,4 @@
-""" 
+"""
 MCP Tool: Get Route
 Thin wrapper that exposes the route_service to MCP clients.
 Accepts structured input, calls the service layer, and returns
@@ -13,7 +13,7 @@ from tokyo_mcp.utils.query_parser import parse_query
 # Internal Helper: split travel time
 # -----------------------------------------------------
 def _split_travel_time(travel_time:str) -> Dict[str,str]:
-    """ 
+    """
     Helper Function:
     Split 'HH:MM発→HH:MM着' into departure and arrival time.
       """
@@ -72,7 +72,7 @@ def get_route_tool(
 
     if "error" in result:
         return result
-    
+
     # Step 4: Normalize travel time
     if "travel_time" in result:
         result.update(_split_travel_time(result["travel_time"]))
