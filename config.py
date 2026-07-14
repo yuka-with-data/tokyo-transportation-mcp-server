@@ -1,4 +1,4 @@
-""" 
+"""
 Transit backend config toggle
 
 USE_EXPERIMENTAL controls which data source is used for route calculations.

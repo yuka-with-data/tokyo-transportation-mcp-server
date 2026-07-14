@@ -1,4 +1,4 @@
-""" 
+"""
 MCP Server Entry Point
 
 Registers MCP tools and exposes them to clients.
@@ -17,7 +17,7 @@ mcp = FastMCP("tokyo-transport-server")
 # ------------------------------------------
 @mcp.tool()
 def get_route(departure:str, arrival:str):
-    """ 
+    """
      Get train route between two stations.
      Args:
         departure(str): Starting station
@@ -35,7 +35,7 @@ def plan_arrival(
     target_arrival_time: str,
     buffer_minutes: int = 10
 ):
-    """ 
+    """
      Plan departure time based on desired arrival time
       Args:
          origin (str): Starting station
@@ -55,7 +55,7 @@ def plan_arrival(
         buffer_minutes = int(buffer_minutes)
 
     # ---------------------------------------------
-    # Delegate to MCP tool wrapper 
+    # Delegate to MCP tool wrapper
     # ---------------------------------------------
     return get_arrival_planning_tool(
         origin=origin,
