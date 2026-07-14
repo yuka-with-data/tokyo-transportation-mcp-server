@@ -1,4 +1,4 @@
-""" 
+"""
 # Route Service (Orchestrator)
 
 Coordinate the transit pipeline:
@@ -6,7 +6,7 @@ Coordinate the transit pipeline:
 2. Parse route data(transit_parser)
 3. Apply station normalization (data/stations)
 
-This layer contains No scrapig, No parsing logic, and No MCP/tool interface code. 
+This layer contains No scrapig, No parsing logic, and No MCP/tool interface code.
  """
 from tokyo_mcp.services.data_service_selector import get_transit_service
 from tokyo_mcp.data.stations import get_japanese_station_name
@@ -40,7 +40,7 @@ def get_route(departure: str, arrival: str) -> dict:
             "departure": departure,
             "arrival": arrival,
         }
-    
+
     # -----------------------------
     # Select backend data service [Experimental]
     # -----------------------------

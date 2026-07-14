@@ -1,8 +1,8 @@
-""" 
+"""
  This file stores an expanded list of key transportation hubs in the Tokyo metro area,
- covering major train and subway hubs. 
+ covering major train and subway hubs.
  These stations include key JR lines, Tokyo Metro, and other private rail operators.
- The list keeps expanding. 
+ The list keeps expanding.
  """
 from typing import Optional
 

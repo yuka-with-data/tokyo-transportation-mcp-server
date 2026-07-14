@@ -1,4 +1,4 @@
-""" 
+"""
 # Transit Parser
 
 Responsible for extracting structured route information
@@ -19,7 +19,7 @@ def _is_valid_station(text:str) -> bool:
     """ Filter out non-station noise from Yahoo transit HTML """
     if not text:
         return False
-    
+
     # Obvious noise keywords
     noise_keywords = [
         "ドーナツ", "カフェ", "レストラン", "ショップ", "store", "shop"

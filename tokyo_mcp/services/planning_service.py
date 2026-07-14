@@ -1,4 +1,4 @@
-""" 
+"""
 Service: Planning Service
 
 Computes recommended departture time based on a target arrival time
@@ -19,7 +19,7 @@ def _parse_hhmm(time_str: str) -> Optional[datetime]:
         return None
 
 def _travel_time_to_minutes(dep_time: str, arr_time:str) -> Optional[int]:
-    """ 
+    """
      Convert departure and arrival time into duration in minutes.
      Assumes same day (no overnight handling just yet)
        """
@@ -29,7 +29,7 @@ def _travel_time_to_minutes(dep_time: str, arr_time:str) -> Optional[int]:
 
         if not dep or not arr:
             return None # invalid time format
-        
+
         # Compute time difference
         delta = arr - dep
         # Convert to minutes
@@ -38,7 +38,7 @@ def _travel_time_to_minutes(dep_time: str, arr_time:str) -> Optional[int]:
         return None # fallback on failure
 
 def _split_travel_time(travel_time:str) -> Dict[str,str]:
-    """ 
+    """
     Helper Function:
     Split 'HH:MM発→HH:MM着' into departure and arrival time.
       """
@@ -55,7 +55,7 @@ def _split_travel_time(travel_time:str) -> Dict[str,str]:
             "departure_time": None,
             "arrival_time": None,
         }
-    
+
 # -------------------------------------------
 # Main Service
 # -------------------------------------------
@@ -65,7 +65,7 @@ def get_departure_for_arrival(
         target_arrival_time: str,
         buffer_minutes: int = 10
 ) -> Dict[str, Any]:
-    """ 
+    """
      Compute recommended departure time to meet a target arrival.
 
     Args:
@@ -121,7 +121,7 @@ def get_departure_for_arrival(
             "error": "invalid_input",
             "reason": "invalid_target_arrival_format"
         }
-    
+
     buffer_minutes = buffer_minutes or 10
 
     # Step 6: Compute recommended departure
