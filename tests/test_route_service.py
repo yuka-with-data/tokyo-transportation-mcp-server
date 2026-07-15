@@ -13,6 +13,13 @@ class MockTransitService:
             "train_lines": ["JR Yamanote Line"]
         }
 
+def mock_get_transit_service():
+    """Return a mock transit service instance."""
+    return MockTransitService()
+
+def identity(value):
+    """Mock station name lookup by returning the input unchanged."""
+    return value
 
 def test_get_route_success(monkeypatch):
     from tokyo_mcp.services import route_service
@@ -22,13 +29,13 @@ def test_get_route_success(monkeypatch):
     monkeypatch.setattr(
         route_service,
         "get_transit_service",
-        lambda: MockTransitService()
+        mock_get_transit_service
     )
 
     monkeypatch.setattr(
         route_service,
         "get_japanese_station_name",
-        lambda x: x
+        identity
     )
 
     # --------------------------------------------------
