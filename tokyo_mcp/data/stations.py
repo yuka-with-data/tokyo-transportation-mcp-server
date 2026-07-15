@@ -55,7 +55,6 @@ STATION_NAME_DICT = {
 
     # Key Private Railway Hubs (Keio, Tokyu, Odakyu, Seibu, Tobu)
     "Kichijoji": "吉祥寺",
-    "Mitaka": "三鷹",
     "Nakano": "中野",
     "Koenji": "高円寺",
     "Ogikubo": "荻窪",
@@ -71,9 +70,6 @@ STATION_NAME_DICT = {
 
     # Major Chuo Line & Sobu Line Stations
     "Ochanomizu": "御茶ノ水",
-    "Nakano": "中野",
-    "Koenji": "高円寺",
-    "Ogikubo": "荻窪",
     "Mitaka": "三鷹",
     "Tachikawa": "立川",
 
