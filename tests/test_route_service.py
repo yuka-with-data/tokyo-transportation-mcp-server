@@ -1,5 +1,3 @@
-from tokyo_mcp.services.route_service import get_route
-
 # ------------------------------------------------------
 # Mock service layer
 # ------------------------------------------------------
