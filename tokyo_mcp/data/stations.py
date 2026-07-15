@@ -4,7 +4,6 @@
  These stations include key JR lines, Tokyo Metro, and other private rail operators.
  The list keeps expanding.
  """
-from typing import Optional
 
 STATION_NAME_DICT = {
     # Major JR Yamanote Line Stations
