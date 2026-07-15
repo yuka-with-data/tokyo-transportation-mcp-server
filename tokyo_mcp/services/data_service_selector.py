@@ -15,6 +15,5 @@ def get_transit_service():
 
         return ExperimentalService()
 
-    else:
-        # placeholder for now
-        pass
+    # Placeholder for future implementation
+    return None
