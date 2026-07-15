@@ -71,7 +71,6 @@ STATION_NAME_DICT = {
 
     # Major Chuo Line & Sobu Line Stations
     "Ochanomizu": "御茶ノ水",
-    "Kanda": "神田",
     "Nakano": "中野",
     "Koenji": "高円寺",
     "Ogikubo": "荻窪",
