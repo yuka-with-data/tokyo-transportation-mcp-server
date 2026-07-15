@@ -7,6 +7,7 @@ using route duration from route_service.
 from typing import Dict, Any, Optional
 from datetime import datetime, timedelta
 from tokyo_mcp.services.route_service import get_route
+from tokyo_mcp.utils.time_parser import parse_travel_time
 
 # -----------------------------------------------
 # Internal Helper Function
@@ -37,24 +38,6 @@ def _travel_time_to_minutes(dep_time: str, arr_time:str) -> Optional[int]:
     except Exception:
         return None # fallback on failure
 
-def _split_travel_time(travel_time:str) -> Dict[str,str]:
-    """
-    Helper Function:
-    Split 'HH:MM発→HH:MM着' into departure and arrival time.
-      """
-    try:
-        dep, arr = travel_time.split("→")
-
-        return {
-            "departure_time": dep.replace("発", "").strip(),
-            "arrival_time": arr.replace("着", "").strip(),
-        }
-
-    except Exception:
-        return {
-            "departure_time": None,
-            "arrival_time": None,
-        }
 
 # -------------------------------------------
 # Main Service
@@ -93,7 +76,7 @@ def get_departure_for_arrival(
         }
 
     # Step 3: Split travel time into departure/arrival
-    time_data = _split_travel_time(travel_time)
+    time_data = parse_travel_time(travel_time)
 
     dep_time = time_data.get("departure_time")
     arr_time = time_data.get("arrival_time")
