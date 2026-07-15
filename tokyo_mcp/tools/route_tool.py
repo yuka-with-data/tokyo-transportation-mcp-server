@@ -8,28 +8,7 @@ structured JSON output (No formatting or scraping)
 from typing import Dict, Any, Optional
 from tokyo_mcp.services.route_service import get_route
 from tokyo_mcp.utils.query_parser import parse_query
-
-# ----------------------------------------------------
-# Internal Helper: split travel time
-# -----------------------------------------------------
-def _split_travel_time(travel_time:str) -> Dict[str,str]:
-    """
-    Helper Function:
-    Split 'HH:MM発→HH:MM着' into departure and arrival time.
-      """
-    try:
-        dep, arr = travel_time.split("→")
-
-        return {
-            "departure_time": dep.replace("発", "").strip(),
-            "arrival_time": arr.replace("着", "").strip(),
-        }
-
-    except Exception:
-        return {
-            "departure_time": None,
-            "arrival_time": None,
-        }
+from tokyo_mcp.utils.time_parser import parse_travel_time
 
 # ---------------------------------------------------
 # MCP Tool
@@ -75,7 +54,7 @@ def get_route_tool(
 
     # Step 4: Normalize travel time
     if "travel_time" in result:
-        result.update(_split_travel_time(result["travel_time"]))
+        result.update(parse_travel_time(result["travel_time"]))
         del result["travel_time"]
 
     return result
