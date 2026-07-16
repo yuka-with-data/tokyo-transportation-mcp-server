@@ -16,7 +16,7 @@ def _parse_hhmm(time_str: str) -> Optional[datetime]:
     """ Parse "HH:MM" into a datetime object (today's date)"""
     try:
         return datetime.strptime(time_str, "%H:%M")
-    except Exception:
+    except ValueError:
         return None
 
 def _travel_time_to_minutes(dep_time: str, arr_time:str) -> Optional[int]:
