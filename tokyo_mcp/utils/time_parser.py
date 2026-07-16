@@ -39,7 +39,8 @@ def parse_travel_time(travel_time: str) -> dict:
             "arrival_time": arr.replace("着", "").strip(),
         }
 
-    except Exception:
+    # Fix broad exeption warning: Expected when travel_time cannot be split into two parts
+    except ValueError:
         return {
             "departure_time": None,
             "arrival_time": None,
