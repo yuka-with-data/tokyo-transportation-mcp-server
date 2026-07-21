@@ -32,10 +32,53 @@ def _is_valid_station(text:str) -> bool:
     return bool(re.search(r"[ぁ-んァ-ン一-龯]", text))
 
 # ----------------------------------------------
+# Utilities
+# ----------------------------------------------
+def _extract_travel_time(route_summary) -> str:
+    """ Extract travel time from route summary """
+    travel_time_tag = route_summary.select_one("li.time span")
+    return travel_time_tag.get_text(strip=True) if travel_time_tag else "N/A"
+
+def _extract_fare(route_summary) -> str:
+    """ Extract fare from route summary """
+    fare = "N/A"
+    fare_li = route_summary.select_one("ul li.fare")
+
+    if fare_li:
+        full_text = fare_li.get_text(strip=True)
+        match = re.search(r"(\d[\d,]*)円", full_text)
+        if match:
+            fare = match.group(0)
+    return fare
+
+def _extract_stations(route_detail) -> list[str]:
+    """ Extract station names from route detail """
+    stations = []
+    for station in route_detail.find_all("div", class_="station"):
+        dt = station.find("dt")
+        if dt:
+            name = dt.get_text(strip=True)
+            if _is_valid_station(name):
+                stations.append(name)
+    return stations
+
+def _extract_train_lines(route_detail) -> list[str]:
+    """ Extract train line information from route detail """
+    train_lines = []
+    for segment in route_detail.find_all("div", class_="fareSection"):
+        line_info = segment.select_one("ul li div")
+        if line_info:
+            text = line_info.get_text(strip=True)
+            if text and len(text) > 2:
+                train_lines.append(text)
+    return train_lines
+
+# ----------------------------------------------
 # Main Parser
 # ----------------------------------------------
 
 def parse_transit_html(html: str) -> dict | None:
+
     """
     Parse Yahoo Transit HTML and extract the top route.
     Returns structured route data.
@@ -53,51 +96,12 @@ def parse_transit_html(html: str) -> dict | None:
     if not route_summary or not route_detail:
         return None
 
-    # ---------------------------------------------------------
-    # Travel time
-    # ---------------------------------------------------------
-    travel_time_tag = route_summary.select_one("li.time span")
-    travel_time = travel_time_tag.get_text(strip=True) if travel_time_tag else "N/A"
-
-    # ---------------------------------------------------------
-    # Fare
-    # ---------------------------------------------------------
-    fare = "N/A"
-    fare_li = route_summary.select_one("ul li.fare")
-
-    if fare_li:
-        full_text = fare_li.get_text(strip=True)
-        match = re.search(r"(\d[\d,]*)円", full_text)
-        if match:
-            fare = match.group(0)
-
-    # ---------------------------------------------------------
-    # Stations
-    # ---------------------------------------------------------
-    stations = []
-    for station in route_detail.find_all("div", class_="station"):
-        dt = station.find("dt")
-        if dt:
-            name = dt.get_text(strip=True)
-
-            # 🔥 filter noise here
-            if _is_valid_station(name):
-                stations.append(name)
-
+    # Extract structured data
+    travel_time = _extract_travel_time(route_summary)
+    fare = _extract_fare(route_summary)
+    stations = _extract_stations(route_detail)
     transfer_stations = stations[1:-1] if len(stations) > 2 else []
-
-    # ---------------------------------------------------------
-    # Train lines
-    # ---------------------------------------------------------
-    train_lines = []
-    for segment in route_detail.find_all("div", class_="fareSection"):
-        line_info = segment.select_one("ul li div")
-        if line_info:
-            text = line_info.get_text(strip=True)
-
-            # optional cleanup (avoid empty noise)
-            if text and len(text) > 2:
-                train_lines.append(text)
+    train_lines = _extract_train_lines(route_detail)
 
     # ---------------------------------------------------------
     # Structured output (MCP-friendly)
