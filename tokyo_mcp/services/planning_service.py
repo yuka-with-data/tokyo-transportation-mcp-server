@@ -24,19 +24,17 @@ def _travel_time_to_minutes(dep_time: str, arr_time:str) -> Optional[int]:
      Convert departure and arrival time into duration in minutes.
      Assumes same day (no overnight handling just yet)
        """
-    try:
-        dep = _parse_hhmm(dep_time)
-        arr = _parse_hhmm(arr_time)
 
-        if not dep or not arr:
-            return None # invalid time format
+    dep = _parse_hhmm(dep_time)
+    arr = _parse_hhmm(arr_time)
 
-        # Compute time difference
-        delta = arr - dep
-        # Convert to minutes
-        return int(delta.total_seconds() // 60)
-    except Exception:
-        return None # fallback on failure
+    if not dep or not arr:
+        return None # invalid time format
+
+    # Compute time difference
+    delta = arr - dep
+    # Convert to minutes
+    return int(delta.total_seconds() // 60)
 
 
 # -------------------------------------------
