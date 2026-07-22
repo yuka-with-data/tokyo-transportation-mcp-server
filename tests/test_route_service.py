@@ -1,8 +1,11 @@
+""" Unit tests for the route_service module. """
 # ------------------------------------------------------
 # Mock service layer
 # ------------------------------------------------------
 class MockTransitService:
+    """ Mock transit service used for route service tests. """
     def get_route(self, departure, arrival):
+        """ Return a predictable mock route response. """
         return {
             "departure": departure,
             "arrival": arrival,
@@ -22,6 +25,7 @@ def identity(value):
     return value
 
 def test_get_route_success(monkeypatch):
+    """ Verify that the route service returns the expected route data. """
     from tokyo_mcp.services import route_service
     # --------------------------------------------------
     # Patch dependencies
