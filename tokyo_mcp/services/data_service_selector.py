@@ -7,9 +7,12 @@ from config import USE_EXPERIMENTAL
 
 def get_transit_service():
     """Returns the active transit service based on the configuration."""
+    # Lazy imports are intentional to avoid loading the experimental backend unless configured.
+    # pylint: disable=import-outside-toplevel
     if USE_EXPERIMENTAL:
         from tokyo_mcp.services.experimental.temp_fetcher import fetch_transit_html
         from tokyo_mcp.services.experimental.temp_parser import parse_transit_html
+    # pylint: enable=import-outside-toplevel
 
         class ExperimentalService:
             """Experimental transit service implementation."""
