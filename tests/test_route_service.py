@@ -2,6 +2,7 @@
 # ------------------------------------------------------
 # Mock service layer
 # ------------------------------------------------------
+# pylint: disable=too-few-public-methods
 class MockTransitService:
     """ Mock transit service used for route service tests. """
     def get_route(self, departure, arrival):
