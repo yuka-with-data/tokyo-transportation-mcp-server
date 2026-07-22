@@ -32,7 +32,7 @@ jobs:
         run: |
           files=$(git ls-files '*.py')
           if [ -n "$files" ]; then
-            pylint --verbose "$files"
+            pylint --verbose $files
           else
             echo "No Python files found."
           fi
