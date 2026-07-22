@@ -27,6 +27,7 @@ def identity(value):
 
 def test_get_route_success(monkeypatch):
     """ Verify that the route service returns the expected route data. """
+    # pylint: disable=import-outside-toplevel
     from tokyo_mcp.services import route_service
     # --------------------------------------------------
     # Patch dependencies
