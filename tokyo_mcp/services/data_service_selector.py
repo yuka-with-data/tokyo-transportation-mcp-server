@@ -1,7 +1,8 @@
 """
 Service selector for choosing the active transit backend.
 
-Currently supports the experiemental HTML parser and provides a placeholder for future production implementations.
+Currently supports the experiemental HTML parser and
+provides a placeholder for future production implementations.
  """
 from config import USE_EXPERIMENTAL
 
@@ -14,6 +15,7 @@ def get_transit_service():
         from tokyo_mcp.services.experimental.temp_parser import parse_transit_html
     # pylint: enable=import-outside-toplevel
 
+        # pylint: disable=too-few-public-methods
         class ExperimentalService:
             """Experimental transit service implementation."""
             def get_route(self, departure_jp, arrival_jp):
