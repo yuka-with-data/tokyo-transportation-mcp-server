@@ -2,7 +2,7 @@
 
 This directory contains **experimental implementations** used during the early prototyping phase of the project.
 
-### Purpose
+## Purpose
 
 These modules were created to quickly validate MCP tool behavior and end-to-end system flow by retrieving transit data from third-party web sources.
 

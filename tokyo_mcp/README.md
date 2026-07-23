@@ -2,7 +2,7 @@
 
 This directory contains the internal architecture, tool definitions, services, and supporting utilities used by the MCP server.
 
-### Directory Purpose
+## Directory Purpose
 
 The package is organized around a layered MCP architecture:
 
