@@ -66,7 +66,7 @@ Therefore, GTFS alone is insufficient as a primary data source for this project.
 
 ## Design Approach
 
-**TBD**
+TBD
 
 ## Key Takeaway
 

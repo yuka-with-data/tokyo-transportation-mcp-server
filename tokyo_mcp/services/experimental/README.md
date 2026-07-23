@@ -1,4 +1,4 @@
-## Experimental Adapters
+# Experimental Adapters
 
 This directory contains **experimental implementations** used during the early prototyping phase of the project.
 

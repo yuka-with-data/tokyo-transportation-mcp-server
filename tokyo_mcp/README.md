@@ -1,4 +1,4 @@
-## Core MCP application package for the Tokyo MCP Server
+# Core MCP application package for the Tokyo MCP Server
 
 This directory contains the internal architecture, tool definitions, services, and supporting utilities used by the MCP server.
 
