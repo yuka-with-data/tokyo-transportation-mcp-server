@@ -335,6 +335,7 @@ Planned and potential improvements:
 Please open an issue first, then create a pull request linked to that issue. For the full contribution workflow, please refer to the documentation in [this repository](https://github.com/yuka-with-data/one-commit-a-day/blob/master/resources/contribution-workflow.md).
 
 ### Guidelines
+
 - Please read the **Roadmap** and **Project Status** in this documentation
 - Keep `server.py` stable unless necessary
 - Focus changes in `services/` and `tools/`
