@@ -1,4 +1,5 @@
 # 🚆Tokyo Transit MCP Server
+
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Status](https://img.shields.io/badge/status-demo--project-orange)
@@ -8,11 +9,13 @@
 > Release Update: The current master is based on `v0.1.3` and includes a revised SKILL integration with restored fare retrieval behavior.
 
 ## Overview
+
 Tokyo Transit MCP Server is a modular backend designed to provide structured public transportation intelligence for AI agents.
 
 Instead of returning raw or unstructured text, this system exposes transportation capabilities as tools that can be called by an agent. These tools handle route search and arrival-time planning, returning clean, predictable outputs that agents can reliably use in downstream reasoning.
 
 This repository is intended for:
+
 - Developers building AI agents that require transportation knowledge
 - Engineers exploring MCP-based architectures
 - Contributors interested in modular, tool-driven system design
@@ -37,9 +40,9 @@ The current system successfully retrieves and processes real-time transit data, 
 
 However, the current implementation relies on a third-party web-based data source, which was intentionally used during the early development phase to:
 
-* validate MCP tool design
-* test end-to-end agent interaction
-* iterate quickly on system architecture
+- validate MCP tool design
+- test end-to-end agent interaction
+- iterate quickly on system architecture
 
 Refer to the `doc` folder for more details on data migration and its challenges.
 
@@ -47,19 +50,19 @@ Refer to the `doc` folder for more details on data migration and its challenges.
 
 To ensure long-term reliability, scalability, and proper data usage, the project is currently being refactored to migrate toward **official, open-source and structured data sources**, such as:
 
-* Open Data Platform for Public Transportation (ODPT)
-* GTFS / GTFS-Realtime feeds
-* other publicly available or licensed transit APIs
+- Open Data Platform for Public Transportation (ODPT)
+- GTFS / GTFS-Realtime feeds
+- other publicly available or licensed transit APIs
 
 This transition focuses on improving:
 
-* data stability
-* system reliability
-* architectural integrity
+- data stability
+- system reliability
+- architectural integrity
 
 ### 🎯 Project Intent
 
-This project is a technical prototype exploring MCP-based system design for transportation use cases. It is not a production transit service. 
+This project is a technical prototype exploring MCP-based system design for transportation use cases. It is not a production transit service.
 
 The project serves as a technical showcase of:
 
@@ -72,11 +75,12 @@ The system is actively evolving from early-stage prototyping toward a more robus
 
 Contributions are welcome as the project evolves. See Contributing section below for guidance on how to get involved.
 
-
 ## What is MCP?
+
 **MCP (Model Context Protocol)** is a design pattern for structuring how AI models interact with external tools and systems.
 
 Instead of relying purely on natural language responses, MCP enables models to:
+
 - Call specific tools when needed
 - Receive structured outputs
 - Chain multiple tool calls as part of reasoning
@@ -84,22 +88,23 @@ Instead of relying purely on natural language responses, MCP enables models to:
 MCP is based on a **client–server architecture**, where the model acts as the client that issues tool requests, and the server provides tools, data access, and execution logic in a structured and controlled way.
 
 In this project, MCP is implemented by:
+
 - Defining tools (`tools/`) as the interface exposed to the model
 - Delegating logic to services (`services/`)
 - Returning structured, predictable outputs instead of free-form text
 
 This separation allows the model to focus on decision-making, while the system handles execution and data processing.
 
-
 ## Features
+
 - Route search between stations
 - Arrival-time-based route planning
 - Clean separation between tools and services
 - Structured outputs designed for AI agent consumption
 - Modular architecture for easy extension
 
-
 ## Project Structure
+
 ```bash
 project_root
 │  ├── .gitignore
@@ -140,6 +145,7 @@ project_root
 ```
 
 ## How It Works
+
 The system follows a layered architecture designed for clarity and extensibility:
 
 1. A user (or AI agent) issues a query  
@@ -153,6 +159,7 @@ The system follows a layered architecture designed for clarity and extensibility
 6. The tool returns a clean output to the agent  
 
 This design enforces strong separation of concerns:
+
 - Tools define *what* is exposed
 - Services define *how* it works
 - Utilities support parsing and normalization
@@ -160,30 +167,40 @@ This design enforces strong separation of concerns:
 As a result, the system remains flexible, testable, and easy to expand with additional transportation capabilities.
 
 ## Installation
+
 ### 1. Fork the repository
+
 Click the "Fork" button on GitHub to create your own copy.
 
 ### 2. Clone your fork
+
 ```bash
 git clone https://github.com/YOUR-USERNAME/tokyo-transportation-mcp-server.git
 cd tokyo-transportation-mcp-server
 ```
 
 Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
+
 ## Quick Start (Codex Desktop / Local MCP Client)
-Get the MCP server running locally and connect it to a client like Codex Desktop in just a few steps. 
+
+Get the MCP server running locally and connect it to a client like Codex Desktop in just a few steps.
+
 1. Verify the MCP Server (Optional)
 You can manually start the server to ensure it runs without errors:
+
 ```bash
 python server.py
 ```
+
 2. Connect to the Local MCP Client
-This configulation registers your local MCP server and instructs the MCP client to launch it using `python server.py` so the agent can access its tools. 
+This configulation registers your local MCP server and instructs the MCP client to launch it using `python server.py` so the agent can access its tools.
 
 Configulation Example:
+
 ```json
 {
   "mcpServers": {
@@ -194,22 +211,29 @@ Configulation Example:
   }
 }
 ```
+
 Save the config and restart the local MCP client so it detects the new MCP server.
 
 ## Usage
+
 ### Example Queries
+
 These are examples of how an AI agent (or MCP client) might interact with the system:
 
 Route Search
+
 - "Find a route from Shibuya to Shinjuku"
 - "How do I get from Ueno to Tokyo Station?"
 
 Arrival Planning
+
 - "I want to arrive at Haneda International Airport by 12:00 PM. When should I leave Shibuya?"
 - "Plan my trip to Shinjuku from Odaiba, so I arrive before 9 AM"
 
 ### Using Tools Programmatically
+
 You can also call the tools directly in Python:
+
 ```bash
 from tokyo_mcp.tools.route_tool import get_route_tool
 from tokyo_mcp.tools.arrival_planner_tool import plan_arrival_tool
@@ -222,81 +246,97 @@ plan = plan_arrival_tool(
     arrival_time="12:00"
 )
 ```
-These functions return structured data that can be used in your own applications or agent workflows. 
+
+These functions return structured data that can be used in your own applications or agent workflows.
 
 ## Available Tools
+
 ### `get_route`
+
 Finds a transportation route between two stations.
 
 Input:
+
 - `origin`: Starting station
 - `destination`: Destination station
 
 Output:
+
 - Departure and arrival times
 - Travel duration
 - Transfer stations
 - Fare information
 
 ### `plan_arrival`
+
 Plans a route based on a desired arrival time.
 
 Input:
+
 - `origin`: Starting station
 - `destination`: Destination station
 - `arrival_time`: Desired arrival time
 
 Output:
+
 - Recommended departure time
 - Suggested route
 - Travel duration
 - Supporting route details
 
 ## Running Tests
+
 Run unit tets with:
+
 ```bash
 pytest
 ```
+
 ### Customizing Tests
+
 This project uses `pytest` for its simplicity and flexibility.
 Developers can easily extend the test setup by:
+
 - Adding new test files under tests/
 - Using fixtures for reusable test setup
 - Parametrizing test cases for broader coverage
 - Mocking external calls (e.g., transit fetching)
 
 ## Roadmap
+
 The primary focus of this project is currently the migration from experimental scraping-based data sources to stable, structured transit data systems (ODPT / GTFS / related APIs). This migration is foundational to all future improvements.
 
 Planned and potential improvements:
+
 - Data Source Migration (Priority):
-    - Replace experimental web scraping with structured transit APIs (ODPT, GTFS)
-    - Build a unified transit data abstraction layer
-    - Standardize route, station, and timetable data models
-    - Improve reliability and consistency of real-time vs static data handling
-    - Gradually deprecate experimental adapters
+  - Replace experimental web scraping with structured transit APIs (ODPT, GTFS)
+  - Build a unified transit data abstraction layer
+  - Standardize route, station, and timetable data models
+  - Improve reliability and consistency of real-time vs static data handling
+  - Gradually deprecate experimental adapters
 - Adding tools:
-    - Fare optimization
-    - Multi-route comparison
-    - Delay/disruption information
+  - Fare optimization
+  - Multi-route comparison
+  - Delay/disruption information
 - Smarter planning:
-    - Context-aware routing (time of day, rush hour, etc)
-    - Multi-step itinerary support
+  - Context-aware routing (time of day, rush hour, etc)
+  - Multi-step itinerary support
 - Multi-agent integration:
-    - Coordination between transportation + local recommendation agents
+  - Coordination between transportation + local recommendation agents
 - Developer experience:
-    - Better logging and debugging
-    - Type hints and validation improvements
+  - Better logging and debugging
+  - Type hints and validation improvements
 - Client layer:
-    - Streamlit, Gradio, or web-based interface
-    - Visualization (maps, route diagrams)
+  - Streamlit, Gradio, or web-based interface
+  - Visualization (maps, route diagrams)
 
 ## Contributing
+
 Please open an issue first, then create a pull request linked to that issue. For the full contribution workflow, please refer to the documentation in [this repository](https://github.com/yuka-with-data/one-commit-a-day/blob/master/resources/contribution-workflow.md).
 
 ### Guidelines
-* Please read the **Roadmap** and **Project Status** in this documentation
-* Keep `server.py` stable unless necessary
-* Focus changes in `services/` and `tools/`
-* Prefer modular and replaceable components
-* Avoid introducing new scraping-based dependencies
+- Please read the **Roadmap** and **Project Status** in this documentation
+- Keep `server.py` stable unless necessary
+- Focus changes in `services/` and `tools/`
+- Prefer modular and replaceable components
+- Avoid introducing new scraping-based dependencies

@@ -16,9 +16,9 @@ These modules were created to quickly validate MCP tool behavior and end-to-end 
 
 The code in this directory is kept for:
 
-- reference during the migration process
-- comparison with new data source implementations
-- experimentation and prototyping
-- testing and experimenting with the MCP architecture as a whol
+* reference during the migration process
+* comparison with new data source implementations
+* experimentation and prototyping
+* testing and experimenting with the MCP architecture as a whol
 
 It should be considered **temporary and replaceable**, not part of the long-term system architecture.
