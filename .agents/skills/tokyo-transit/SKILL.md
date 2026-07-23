@@ -114,7 +114,7 @@ Preferred response structure:
 2. Transfer sequence
 3. Estimated travel time
 4. Total fare
-4. Additional notes (if needed)
+5. Additional notes (if needed)
 
 ## Failure Handling
 
