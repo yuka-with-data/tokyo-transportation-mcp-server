@@ -10,6 +10,16 @@
       "id": 2,
       "prompt": "What's the best way to get from Shinjuku Station to Tokyo DisneySea?",
       "expected_output": "Provides a valid route to Tokyo DisneySea via the nearest station, includes any required walking segment, travel time, transfers, and fare."
+    },
+    {
+      "id": 3,
+      "prompt": "I'm staying near Shinjuku Station. What's the best way to get to Tokyo Tower? Include transfers and fares.",
+      "expected_output": "Uses the Tokyo Transit MCP tools to determine the appropriate destination station for Tokyo Tower and provides a valid route including transfers, travel time, fare, and any walking segment."
+    },
+    {
+      "id": 4,
+      "prompt": "I am visiting Tokyo for the first time. What is the best way to get from Shinjuku Station to Tokyo DisneySea? Please explain the route, transfers, travel time, and fares.",
+      "expected_output": "Correctly identifies this as a Tokyo transit routing request, uses the Tokyo Transit MCP tools, and provides complete transit information. When multiple valid routes exist, the response should prefer a practical route considering factors such as transfers, travel time, and fare."
     }
   ]
 }
