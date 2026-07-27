@@ -1,0 +1,35 @@
+{
+  "origin": "Shinjuku Station",
+  "destination": "Tokyo DisneySea",
+  "best_route": {
+    "fare_yen": 816,
+    "departure_time": "05:00",
+    "arrival_time": "06:12",
+    "train_line_segments": 3,
+    "walking_segment": null
+  },
+  "stations": [
+    "新宿",
+    "市ケ谷",
+    "新木場",
+    "舞浜",
+    "リゾートゲートウェイ・ステーション",
+    "東京ディズニーシー・ステーション"
+  ],
+  "transfers": [
+    "市ケ谷",
+    "新木場",
+    "舞浜",
+    "リゾートゲートウェイ・ステーション"
+  ],
+  "train_lines": [
+    "都営新宿線(当駅始発)本八幡行[発]5番線→[着]2番線",
+    "ＪＲ京葉線蘇我行[発]1番線→[着]1番線",
+    "ディズニーリゾートライン(当駅始発)リゾートゲートウェイ・ステーション行"
+  ],
+  "route_summary": [
+    "Shinjuku -> Ichigaya on the Toei Shinjuku Line",
+    "Ichigaya -> Shin-Kiba -> Maihama on the JR Keiyo Line",
+    "Maihama -> Resort Gateway Station -> Tokyo DisneySea Station on the Disney Resort Line"
+  ]
+}
