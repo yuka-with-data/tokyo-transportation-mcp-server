@@ -1,0 +1,18 @@
+{
+  "origin": "Shinjuku Station",
+  "destination": "Tokyo Tower",
+  "best_route": {
+    "train_line": "Toei Oedo Line",
+    "from": "Shinjuku",
+    "to": "Akabanebashi",
+    "transfers": 0,
+    "train_time_minutes": 12,
+    "fare_yen": 220,
+    "walking_segment_minutes": 7,
+    "total_travel_time_minutes": 19
+  },
+  "route_summary": [
+    "Shinjuku -> Akabanebashi on the Toei Oedo Line",
+    "Walk from Akabanebashi to Tokyo Tower"
+  ]
+}
