@@ -5,7 +5,7 @@ Registers MCP tools and exposes them to clients.
 This is the bridge between external clients and internal logic.
  """
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP # pylint: disable=import-error,no-name-in-module
 from tokyo_mcp.tools.route_tool import get_route_tool
 from tokyo_mcp.tools.arrival_planner_tool import get_arrival_planning_tool
 
