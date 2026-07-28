@@ -12,6 +12,7 @@ Best route from the Tokyo Transit MCP tool:
 - **Walking segment:** none listed
 
 Route:
+
 1. **Shinjuku → 市ケ谷 (Ichigaya)** on the **Toei Shinjuku Line**
 2. **市ケ谷 → 新木場 (Shin-Kiba)** on the **JR Keiyo Line**
 3. **新木場 → 舞浜 (Maihama)** on the **JR Keiyo Line**
@@ -19,6 +20,7 @@ Route:
 5. **リゾートゲートウェイ・ステーション → 東京ディズニーシー・ステーション (Tokyo DisneySea Station)** on the **Disney Resort Line**
 
 Transfer points returned by the tool:
+
 - 市ケ谷
 - 新木場
 - 舞浜

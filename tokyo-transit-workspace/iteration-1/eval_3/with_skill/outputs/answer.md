@@ -10,6 +10,7 @@ Best route: take the **Toei Oedo Line** from **Shinjuku** to **Akabanebashi**, t
 - **Total fare:** 220 yen
 
 Route summary:
+
 1. **Shinjuku → Akabanebashi** on the Toei Oedo Line
 2. **Walk from Akabanebashi to Tokyo Tower**
 
