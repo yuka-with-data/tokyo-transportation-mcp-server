@@ -148,15 +148,15 @@ project_root
 
 The system follows a layered architecture designed for clarity and extensibility:
 
-1. A user (or AI agent) issues a query  
-2. The appropriate tool is selected (`tools/`)  
-3. The tool calls into a service (`services/`)  
+1. A user (or AI agent) issues a query
+2. The appropriate tool is selected (`tools/`)
+3. The tool calls into a service (`services/`)
 4. The service coordinates:
    - Data fetching (`transit_fetcher`)
    - Data parsing (`transit_parser`)
    - Business logic (e.g., route selection, arrival planning)
-5. A structured response is returned to the tool  
-6. The tool returns a clean output to the agent  
+5. A structured response is returned to the tool
+6. The tool returns a clean output to the agent
 
 This design enforces strong separation of concerns:
 
@@ -179,11 +179,19 @@ git clone https://github.com/YOUR-USERNAME/tokyo-transportation-mcp-server.git
 cd tokyo-transportation-mcp-server
 ```
 
-Install dependencies:
+Install the project and development dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -e ".[dev]"
 ```
+
+Download the `spaCy` English model
+
+```bash
+python -m spacy download en_core_web_sm
+```
+
+This project uses `pyproject.toml` for dependency management. The editable install (`-e`) links your local source code into the Python environment, making it ideal for development.
 
 ## Quick Start (Codex Desktop / Local MCP Client)
 
