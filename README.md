@@ -6,7 +6,7 @@
 ![Architecture](https://img.shields.io/badge/design-MCP%20architecture-purple)
 ![Use Case](https://img.shields.io/badge/use--case-AI%20Agents-green)
 > [!NOTE]
-> Release Update: The current master is based on `v0.1.3` and includes a revised SKILL integration with restored fare retrieval behavior.
+> Project Update [MCP & Skill.md]: While this project began as a Tokyo transit MCP server, it is currently used as an experimental repository for exploring Model Context Protocol (MCP), `SKILL.md`, and AI agent behavior. **This is not a production-ready project as of now.** Features, architecture, and implementation may change as new experiments and evaluations are conducted.
 
 ## Overview
 
