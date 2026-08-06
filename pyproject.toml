@@ -5,17 +5,17 @@ description = "Tokyo Transit MCP Tools for Client UI"
 requires-python = ">=3.10"
 
 dependencies = [
-    "mcp[cli]",
-    "requests",
-    "beautifulsoup4",
-    "lxml",
-    "spacy",
+    "mcp[cli]>=1.27,<2",
+    "requests>=2.33,<3",
+    "beautifulsoup4>=4.14,<5",
+    "lxml>=6.1,<7",
+    "spacy>=3.8,<4",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
-    "pylint",
+    "pytest>=9,<10",
+    "pylint>=3,<5",
 ]
 
 [tool.setuptools]
