@@ -2,5 +2,5 @@ mcp[cli]
 pytest>=9.0.3
 requests==2.33.1
 lxml==6.1.0
-beautifulsoup4==4.14.3
+beautifulsoup4==4.15.0
 spacy == 3.8.14
