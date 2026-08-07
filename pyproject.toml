@@ -5,7 +5,7 @@ description = "Tokyo Transit MCP Tools for Client UI"
 requires-python = ">=3.10"
 
 dependencies = [
-    "mcp[cli]>=1.27,<2",
+    "mcp[cli]>=1.27,<3",
     "requests>=2.33,<3",
     "beautifulsoup4>=4.14,<5",
     "lxml>=6.1,<7",
