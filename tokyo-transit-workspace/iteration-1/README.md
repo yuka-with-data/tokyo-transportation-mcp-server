@@ -10,7 +10,7 @@ This iteration evaluates how the 'tokyo-transit' Skill affects agent behavior wh
 | 2 | Shinjuku Station → Tokyo DisneySea | Attraction/station resolution and transit details |
 | 3 | Shinjuku Station → Tokyo Tower | Landmark resolution |
 | 4 | Natural-language DisneySea request | Skill influence on route selection |
-| 5 | Shinjuku Station → Tokyo Station with transfer preference | Skill routing rules |
+| 5 | Shinjuku Station → Toyosu Station with transfer preference | Skill routing rules |
 | 6 | Arrive at Tokyo Station by a specific time | Skill-driven MCP tool selection |
 
 
