@@ -1,0 +1,15 @@
+{
+  "departure": "Shinjuku",
+  "arrival": "Toyosu",
+  "route": [
+    "Shinjuku",
+    "Kanda (Tokyo)",
+    "Yurakucho",
+    "Toyosu"
+  ],
+  "travel_time_minutes": 37,
+  "transfers": 2,
+  "fare_yen": 431,
+  "notes": "This route uses JR Chuo Line Rapid from Shinjuku, then Tokyo Metro Yurakucho Line to Toyosu.",
+  "source": "Tokyo Transit MCP get_route query for Shinjuku to Toyosu"
+}
