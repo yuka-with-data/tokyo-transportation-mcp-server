@@ -1,0 +1,14 @@
+{
+  "departure": "Shinjuku",
+  "arrival": "Toyosu",
+  "route": [
+    "Shinjuku",
+    "Ichigaya",
+    "Toyosu"
+  ],
+  "travel_time_minutes": 26,
+  "transfers": 1,
+  "fare_yen": 317,
+  "notes": "This route uses the Toei Shinjuku Line from Shinjuku, then transfers at Ichigaya and continues to Toyosu.",
+  "source": "Tokyo Transit MCP get_route query for Shinjuku to Toyosu"
+}
