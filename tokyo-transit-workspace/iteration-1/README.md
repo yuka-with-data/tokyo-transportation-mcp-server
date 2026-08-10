@@ -13,7 +13,6 @@ This iteration evaluates how the 'tokyo-transit' Skill affects agent behavior wh
 | 5 | Shinjuku Station → Toyosu Station with transfer preference | Skill routing rules |
 | 6 | Arrive at Tokyo Station by a specific time | Skill-driven MCP tool selection |
 
-
 ## Key Finding So Far
 
 Evals 1-3 produces essentially identical results with and without the Skill.
