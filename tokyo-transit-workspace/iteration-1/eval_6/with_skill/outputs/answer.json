@@ -1,0 +1,21 @@
+{
+  "departure": "Shinjuku",
+  "arrival": "Asakusa",
+  "target_arrival_time": "08:00",
+  "recommended_departure_time": "07:02",
+  "expected_arrival_time": "07:50",
+  "route": [
+    "Shinjuku",
+    "Asakusabashi",
+    "Asakusa"
+  ],
+  "train_lines": [
+    "JR Sobu Line",
+    "Toei Asakusa Line"
+  ],
+  "transfers": 1,
+  "transfer_station": "Asakusabashi",
+  "travel_time_minutes": 48,
+  "fare_yen": 387,
+  "source": "Tokyo Transit MCP get_arrival_planning_tool query for Shinjuku to Asakusa by 08:00"
+}
