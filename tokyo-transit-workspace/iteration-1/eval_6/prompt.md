@@ -21,4 +21,4 @@ Execute this task:
   none
 
 - Save outputs to:
-  mcp-server\tokyo-mcp-server\tokyo-transit-workspace/iteration-1/eval-6/with_skill/outputs/
+  mcp-server\tokyo-mcp-server\tokyo-transit-workspace/iteration-1/eval_6/with_skill/outputs/
