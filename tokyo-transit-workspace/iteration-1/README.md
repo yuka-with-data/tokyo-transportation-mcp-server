@@ -32,6 +32,7 @@ This suggests that a Skill does not automatically improve agent decisions; its i
 | 3 | Station → landmark route | Identical | Little measurable Skill impact |
 | 4 | Natural-language, more complex route request | Different routes | Skill changed behavior, but selected a less optimal route |
 | 5 | Route request with explicit transfer preference | Different routes | Skill better aligned the route with the user's preference |
+| 6 | Time-sensitive route planning | Identical | MCP handled the task well; Skill had no measurable impact |
 
 ## Current Hypothesis
 
