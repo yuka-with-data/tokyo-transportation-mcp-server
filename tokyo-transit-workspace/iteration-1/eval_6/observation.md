@@ -37,3 +37,11 @@ Both With Skill and Without Skill versions:
 - Fare: 387 yen
 
 The only difference was the JSON field name used for the arrival time (`expected_arrival_time` vs. `planned_arrival_time`), which did not affect the result.
+
+## Analysis
+
+Unlike Eval 4 and 5, the Skill did **not** produce a meaningful differences in this evaluation.
+
+Both suggests that the underlying MCP tool was already capable of handling the request reliably, and the Skill did not materially improve or degrade the result.
+
+The result further supports the hypothesis that the impact of a Skill depends on the task, the underlying MCP tools, and how the Skill is defined.
