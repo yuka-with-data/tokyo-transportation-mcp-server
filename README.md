@@ -349,3 +349,7 @@ Please open an issue first, then create a pull request linked to that issue. For
 - Focus changes in `services/` and `tools/`
 - Prefer modular and replaceable components
 - Avoid introducing new scraping-based dependencies
+
+### License
+
+For demonstration purposes.
